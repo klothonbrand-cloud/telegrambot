@@ -1,3 +1,6 @@
+import os
+from dotenv import load_dotenv
+
 import asyncio
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
@@ -13,7 +16,8 @@ from keyboards.country import country_keyboard
 
 from states.profile_states import ProfileSetup
 
-TOKEN = "8531257365:AAE8w3Z37HA11AmlR7DavXGiQizJL_7bU3I"
+load_dotenv()
+TOKEN = os.getenv("BOT_TOKEN")
 
 bot = Bot(token=TOKEN)
 storage = MemoryStorage()
